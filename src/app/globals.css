@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --p5-red: #FF0000;
+  --p5-crimson: #DC143C;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+
+/* Custom Persona 5 Background Stripes */
+.p5-stripe-bg {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.08) 0px,
+    rgba(255, 0, 0, 0.08) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.p5-red-stripes {
+  background: repeating-linear-gradient(
+    0deg,
+    #FF0000 0px,
+    #FF0000 40px,
+    #8B0000 40px,
+    #8B0000 80px
+  );
+}
+
+/* Angular Cutout Clip Paths */
+.p5-clip-button {
+  clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+}
+
+.p5-clip-badge {
+  clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+}
+
+.p5-clip-card {
+  clip-path: polygon(0 0, 96% 0, 100% 4%, 100% 100%, 4% 100%, 0 96%);
+}
+
+.p5-clip-triangle {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DC143C;
+}
+
+/* Text & Shadow Utilities */
+.p5-text-shadow {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.95), 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.p5-red-glow {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.p5-red-glow-lg {
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+}
+
+/* Focus Ring for Keyboard Accessibility */
+:focus-visible {
+  outline: 2px solid #FF0000;
+  outline-offset: 2px;
+}

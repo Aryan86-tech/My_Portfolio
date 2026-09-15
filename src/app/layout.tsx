@@ -1,44 +1,23 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { personalInfo } from "@/data/portfolioData";
+import { OfflineBanner } from "@/components/layout/OfflineBanner";
+import { ServiceWorkerRegister } from "@/components/layout/ServiceWorkerRegister";
 
 export const viewport: Viewport = {
-  themeColor: "#FF0000",
+  themeColor: "#09090b",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "Aryan — Computer Science Student & Developer",
-  description:
-    "Portfolio of Aryan, a Computer Science Engineering student at IIIT Sonepat building projects across software development, AI and modern web technologies.",
-  keywords: [
-    "Aryan",
-    "IIIT Sonepat",
-    "Computer Science Student",
-    "Software Developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "LangGraph",
-    "Flutter",
-    "Hackathon",
-  ],
-  authors: [{ name: "Aryan" }],
-  openGraph: {
-    title: "Aryan — Computer Science Student & Developer",
-    description:
-      "Portfolio of Aryan, a Computer Science Engineering student at IIIT Sonepat building projects across software development, AI and modern web technologies.",
-    type: "website",
-    locale: "en_US",
-    siteName: "Aryan Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Aryan — Computer Science Student & Developer",
-    description:
-      "Portfolio of Aryan, a Computer Science Engineering student at IIIT Sonepat building projects across software development, AI and modern web technologies.",
+  title: "WINTER ARC — Personal Discipline RPG",
+  description: "Build yourself in the winter. Real-life actions become game progression.",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "WINTER ARC",
   },
 };
 
@@ -49,10 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="bg-background text-foreground min-h-screen font-body relative overflow-x-hidden antialiased">
-        {/* Universal P5 Background Texture */}
-        <div className="fixed inset-0 p5-stripe-bg pointer-events-none z-0 opacity-40" />
-        <div className="relative z-10">{children}</div>
+      <body className="bg-zinc-950 text-slate-100 min-h-screen relative overflow-x-hidden antialiased font-sans">
+        <OfflineBanner />
+        <ServiceWorkerRegister />
+        {children}
       </body>
     </html>
   );
